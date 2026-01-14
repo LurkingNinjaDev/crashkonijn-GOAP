@@ -57,6 +57,7 @@ namespace CrashKonijn.Goap.Demos.Complex.Factories.Extensions
             var action = builder.AddAction<CreateItemAction<T>>()
                 .SetTarget<ClosestTarget<AnvilSource>>()
                 .AddEffect<CreatedItem<T>>(EffectType.Increase)
+                .SetValidateConditions(false)
                 .SetProperties(new CreateItemAction<T>.Props
                 {
                     requiredIron = requiredIron,
